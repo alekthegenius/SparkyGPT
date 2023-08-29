@@ -19,26 +19,7 @@ model = GPT4All(r"C:\Users\alekp\AppData\Local\nomic.ai\GPT4All\wizardlm-13b-v1.
 
 system_template = 'A chat between a curious user and an artificial intelligence assistant.'
 
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-    
-    if bot.user.mentioned_in(message):
-        prompt = str(message.content).replace('<@1141136275148124272> ', '')
-        print(prompt)
-        message = await message.channel.send("Hold on while my AI mind is thinking...")
-        with model.chat_session(system_template):
-            tokens = []
-            for token in model.generate(prompt, max_tokens=20, streaming=True):
-                tokens.append(token)
-                await message.edit(content="".join(str(x) for x in tokens))
-                print(tokens)
-    await bot.process_commands(message)
 
-
-
-"""
 @bot.command()
 async def test(ctx, *args):
     arguments = ' '.join(args)
@@ -46,6 +27,5 @@ async def test(ctx, *args):
     output = model.generate(prompt)
     await ctx.send("Hold on while my AI mine is thinking...")
     await ctx.send(output)
-"""
         
 bot.run(TOKEN)
