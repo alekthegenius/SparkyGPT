@@ -8,6 +8,5 @@ SparkyGPT is an AI Discord Bot that runs entirely on your computer through the p
 ## Files Overview:
 
 - SparkyGPT.py: A Lightweight AI Chat Bot That Responds When it Gets Mentioned
-- SparkyGPTv2.py: A heavier AI Chat Bot that can generate stable diffusion images, chat, and be configured through bash like commands
-- .env: An Environment File to Put Secrets In, such as Tokens, Passwords, etc...
+- SparkyGPTv2.py: A heavier AI Chat Bot that can generate stable diffusion images, chat, and be configured through bash-like commands
 - requirements.txt: A list of dependencies to install 
