@@ -38,7 +38,7 @@ GUILD = os.getenv('DISCORD_GUILD')
 intents = discord.Intents.default()
 intents.message_content = True
 
-model_path = r"C:\Users\alekp\AppData\Local\nomic.ai\GPT4All"
+model_path = r"~/GPTModules"
 
 modules = [os.path.basename(x) for x in glob.glob(model_path + '\*.bin')]
 
