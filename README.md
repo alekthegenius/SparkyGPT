@@ -1,7 +1,7 @@
 # SparkyGPT
 SparkyGPT is an AI Discord Bot that runs entirely on your computer through the power of [GPT4ALL](https://github.com/nomic-ai/gpt4all) and [Diffusers](https://github.com/huggingface/diffusers)
 
-Python Version 3.10.13
+Python Version 3.10.12
 
 ### Files Overview:
 
