@@ -245,7 +245,7 @@ async def sparky(ctx, *args):
                 
                 
 
-                modules = [os.path.basename(x) for x in glob.glob(model_path + '\*.bin')] # Gets Current Modules
+                modules = [os.path.basename(x) for x in glob.glob(model_path + '/*.bin')] # Change '/*.bin' to `\*.bin` for Windows
 
                 mod = args[exp]
                 print(mod)
