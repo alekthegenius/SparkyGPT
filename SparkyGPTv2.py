@@ -38,9 +38,9 @@ GUILD = os.getenv('DISCORD_GUILD')
 intents = discord.Intents.default()
 intents.message_content = True
 
-model_path = r"~/GPTModules"
+model_path = r"/home/alek/GPTModules"
 
-modules = [os.path.basename(x) for x in glob.glob(model_path + '\*.bin')]
+modules = [os.path.basename(x) for x in glob.glob(model_path + '/*.bin')] # Change '/*.bin' to `\*.bin` for Windows
 
 model_id = "stabilityai/stable-diffusion-2-1"
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
