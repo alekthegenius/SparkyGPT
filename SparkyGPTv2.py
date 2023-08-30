@@ -79,12 +79,13 @@ async def on_message(message):
         prompt = str(message.content).replace(f'<@{bot.user.id}> ', '') # Deletes AI Bot's user id
         print(prompt)
         message = await message.channel.send("Hold on while my AI mind is thinking...")
-        with model.chat_session(system_template):
-            tokens = []
-            for token in model.generate(prompt, max_tokens=20, streaming=True):
-                tokens.append(token)
-                await message.edit(content="".join(str(x) for x in tokens))
-                print(tokens)
+        async with message.channel.typing():
+            with model.chat_session(system_template):
+                tokens = []
+                for token in model.generate(prompt, max_tokens=20, streaming=True):
+                    tokens.append(token)
+                    await message.edit(content="".join(str(x) for x in tokens))
+                    print(tokens)
     await bot.process_commands(message)
 
 @bot.command(name='sparky')
